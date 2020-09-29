@@ -3,6 +3,8 @@ import User from './User'
 import axios from 'axios'
 import './UserCards.css'
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import PeopleIcon from '@material-ui/icons/People';
 
 class UserCards extends React.Component {
 
@@ -31,10 +33,9 @@ class UserCards extends React.Component {
                <h3>{this.state.myInfo.name === null ? this.state.myInfo.login : this.state.myInfo.name}</h3>
                <img src={this.state.myInfo.avatar_url} alt={`${this.state.myInfo.name} profile`}/>
                <p><AccountBoxIcon/>{this.state.myInfo.login}</p>
-               <p>{this.state.myInfo.html_url}</p>
-               <p>Followers: {this.state.myInfo.followers}</p>
-               <p>Following: {this.state.myInfo.following}</p>
-               <p>Location: {this.state.myInfo.location !== null ? this.state.myInfo.location : 'N/A' }</p>
+               <p><PeopleIcon/>{this.state.myInfo.followers} : {this.state.myInfo.following}</p>
+               <p><LocationOnIcon/>{this.state.myInfo.location !== null ? this.state.myInfo.location : 'N/A' }</p>
+               <a href={this.state.myInfo.html_url} target='_blank'>Visit Github</a>
             </div>
             {
                this.props.cards.map((eachUser => {

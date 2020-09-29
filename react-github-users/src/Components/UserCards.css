@@ -23,12 +23,25 @@
    margin-bottom: 4%;
 }
 
+.myCard > a {
+   text-decoration: none;
+   margin-bottom: 4%;
+   color: lightgray;
+   transition: all 1.2s ease-out;
+}
+
+.myCard a:hover {
+   color: black;
+}
+
 .myCard > h3 {
    margin: 3% 0;
 }
 
 .myCard p {
    display: flex;
+   width: 50%;
+   justify-content: space-between;
    align-items: center;
    margin-bottom: 3%;
 }
