@@ -2,6 +2,7 @@ import React from 'react'
 import User from './User'
 import axios from 'axios'
 import './UserCards.css'
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 class UserCards extends React.Component {
 
@@ -29,7 +30,7 @@ class UserCards extends React.Component {
             <div className='myCard'>
                <h3>{this.state.myInfo.name === null ? this.state.myInfo.login : this.state.myInfo.name}</h3>
                <img src={this.state.myInfo.avatar_url} alt={`${this.state.myInfo.name} profile`}/>
-               <p>Username: {this.state.myInfo.login}</p>
+               <p><AccountBoxIcon/>{this.state.myInfo.login}</p>
                <p>{this.state.myInfo.html_url}</p>
                <p>Followers: {this.state.myInfo.followers}</p>
                <p>Following: {this.state.myInfo.following}</p>
